@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -69,9 +70,11 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel) {
 
             Card(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
+                colors = CardDefaults.cardColors(Color(0xFFF2F2F7))
             ) {
-                Column(modifier = Modifier
+                Column(
+                    modifier = Modifier
                     .padding(16.dp)
                     .background(Color.Transparent)
                 ) {

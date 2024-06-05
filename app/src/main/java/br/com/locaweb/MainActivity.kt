@@ -17,6 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.locaweb.screens.LoginScreen
 import br.com.locaweb.screens.LoginScreenViewModel
+import br.com.locaweb.screens.TelaInicialScreen
 import br.com.locaweb.ui.theme.LocawebTheme
 import br.com.locaweb.ui.theme.PurpleGrey40
 import br.com.locaweb.ui.theme.White
@@ -31,7 +32,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = White
                 ) {
-                    LoginScreen(LoginScreenViewModel())
+                    //LoginScreen(LoginScreenViewModel())
+                    TelaInicialScreen()
             }
         }
     }
