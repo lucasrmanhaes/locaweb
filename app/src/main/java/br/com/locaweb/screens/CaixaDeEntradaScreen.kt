@@ -1,3 +1,5 @@
+// CaixaDeEntradaScreen.kt
+
 package br.com.locaweb.screens
 
 import androidx.compose.foundation.layout.Arrangement
@@ -12,6 +14,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -23,6 +29,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.locaweb.R
 import br.com.locaweb.components.CustomCard
+import br.com.locaweb.local_storage.Email
+import br.com.locaweb.local_storage.emailList
+import kotlinx.coroutines.delay
 
 @Composable
 fun CaixaDeEntradaScreen() {
@@ -30,6 +39,17 @@ fun CaixaDeEntradaScreen() {
         Font(R.font.roboto_regular, FontWeight.Normal),
         Font(R.font.roboto_bold, FontWeight.Bold)
     )
+
+    val emailsToShow = remember { mutableStateListOf<Email>() }
+    val currentEmailIndex = remember { mutableStateOf(0) }
+
+    LaunchedEffect(Unit) {
+        while (currentEmailIndex.value < emailList.size) {
+            delay(5000) // Aguarda 5 segundos antes de exibir o próximo e-mail
+            emailsToShow.add(emailList[currentEmailIndex.value])
+            currentEmailIndex.value++
+        }
+    }
 
     Column(
         modifier = Modifier
@@ -90,41 +110,16 @@ fun CaixaDeEntradaScreen() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Adicionando múltiplos CustomCard
-        CustomCard(
-            title = "Google Play",
-            date = "07 de jun",
-            description = "Suas configurações de verifica...",
-            imageResource = R.drawable.circulo_laranja,
-            iconResource = R.drawable.outline_star_24
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-
-        CustomCard(
-            title = "App Store",
-            date = "08 de jun",
-            description = "Atualização disponível...",
-            imageResource = R.drawable.circulo_verde,
-            iconResource = R.drawable.outline_star_24
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-
-        CustomCard(
-            title = "Microsoft Store",
-            date = "09 de jun",
-            description = "Novos aplicativos adicionados...",
-            imageResource = R.drawable.circulo_rosa,
-            iconResource = R.drawable.outline_star_24
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        CustomCard(
-            title = "Microsoft Store",
-            date = "09 de jun",
-            description = "Novos aplicativos adicionados...",
-            imageResource = R.drawable.circulo_azul,
-            iconResource = R.drawable.outline_star_24
-        )
+        // Listagem dos e-mails
+        emailsToShow.forEach { email ->
+            CustomCard(
+                title = email.title,
+                date = email.date,
+                description = email.description,
+                imageResource = email.imageResource,
+                iconResource = email.iconResource
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+        }
     }
 }

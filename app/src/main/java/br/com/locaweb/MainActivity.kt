@@ -33,9 +33,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = White
                 ) {
-                    LoginScreen(LoginScreenViewModel())
+                    //LoginScreen(LoginScreenViewModel())
                     //TelaInicialScreen()
-                    //CaixaDeEntradaScreen()
+                    CaixaDeEntradaScreen()
             }
         }
     }
