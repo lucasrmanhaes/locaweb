@@ -31,6 +31,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.locaweb.R
 import br.com.locaweb.components.CaixaDeInput
 import br.com.locaweb.components.CustomButton
@@ -38,7 +39,7 @@ import br.com.locaweb.ui.theme.Subtitle
 import br.com.locaweb.ui.theme.VermelhoLocaWeb
 
 @Composable
-fun LoginScreen(loginScreenViewModel: LoginScreenViewModel) {
+fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavController) {
 
     val Roboto = FontFamily(
         Font(R.font.roboto_regular, FontWeight.Normal),
@@ -146,7 +147,7 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel) {
                             .fillMaxWidth()
                             .padding(top = 32.dp)
                             .height(40.dp),
-                        onClick = { /*TODO*/ })
+                        onClick = { navController.navigate("telaInicial") })
 
                     CustomButton(
                         text = "Cadastre-se",

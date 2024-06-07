@@ -33,9 +33,15 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = White
                 ) {
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = "login") {
+                        composable(route = "login"){ LoginScreen(LoginScreenViewModel(),  navController)}
+                        composable(route = "TelaInicial"){ TelaInicialScreen(navController)}
+                        composable(route = "TelaListaEmails"){ CaixaDeEntradaScreen(navController)}
+                    }
                     //LoginScreen(LoginScreenViewModel())
                     //TelaInicialScreen()
-                    CaixaDeEntradaScreen()
+                    //CaixaDeEntradaScreen()
             }
         }
     }

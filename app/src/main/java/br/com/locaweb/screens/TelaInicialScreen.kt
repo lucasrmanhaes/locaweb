@@ -39,6 +39,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.locaweb.R
 import br.com.locaweb.components.CustomButtonTelaInicial
 import br.com.locaweb.ui.theme.Subtitle
@@ -46,7 +47,7 @@ import br.com.locaweb.ui.theme.TelaFundo
 import br.com.locaweb.ui.theme.White
 
 @Composable
-fun TelaInicialScreen() {
+fun TelaInicialScreen(navController: NavController) {
     val Roboto = FontFamily(
         Font(R.font.roboto_regular, FontWeight.Normal),
         Font(R.font.roboto_bold, FontWeight.Bold)
@@ -94,7 +95,7 @@ fun TelaInicialScreen() {
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.ic_inbox),
                             text = "Entrada",
-                            onClick = { /*TODO*/ }
+                            onClick = {  navController.navigate("TelaListaEmails") }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
@@ -129,19 +130,19 @@ fun TelaInicialScreen() {
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_report_24),
-                            text = "Entrada",
+                            text = "Spam",
                             onClick = { /*TODO*/ }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_calendar_today_24),
-                            text = "Entrada",
+                            text = "Agenda",
                             onClick = { /*TODO*/ }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_settings_24),
-                            text = "Entrada",
+                            text = "Configurações",
                             onClick = { /*TODO*/ }
                         )
                     }

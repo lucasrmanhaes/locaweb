@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -27,6 +28,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.locaweb.R
 import br.com.locaweb.components.CustomCard
 import br.com.locaweb.local_storage.Email
@@ -34,7 +36,7 @@ import br.com.locaweb.local_storage.emailList
 import kotlinx.coroutines.delay
 
 @Composable
-fun CaixaDeEntradaScreen() {
+fun CaixaDeEntradaScreen(navController: NavController) {
     val Roboto = FontFamily(
         Font(R.font.roboto_regular, FontWeight.Normal),
         Font(R.font.roboto_bold, FontWeight.Bold)
@@ -45,7 +47,7 @@ fun CaixaDeEntradaScreen() {
 
     LaunchedEffect(Unit) {
         while (currentEmailIndex.value < emailList.size) {
-            delay(5000) // Aguarda 5 segundos antes de exibir o próximo e-mail
+            delay(3000) // Aguarda 3 segundos antes de exibir o próximo e-mail
             emailsToShow.add(emailList[currentEmailIndex.value])
             currentEmailIndex.value++
         }
@@ -67,7 +69,7 @@ fun CaixaDeEntradaScreen() {
             ) {
                 Icon(
                     painterResource(id = R.drawable.outline_search_24),
-                    contentDescription = "Ícone de senha",
+                    contentDescription = "Ícone de pesquisar",
                     tint = Color(0xFF1E1B19)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
@@ -80,7 +82,7 @@ fun CaixaDeEntradaScreen() {
                 Spacer(modifier = Modifier.width(8.dp))
                 Icon(
                     painterResource(id = R.drawable.outline_edit_24),
-                    contentDescription = "Ícone de senha",
+                    contentDescription = "Ícone de editar",
                     tint = Color(0xFF1E1B19)
                 )
             }
@@ -93,11 +95,15 @@ fun CaixaDeEntradaScreen() {
                     .fillMaxWidth()
                     .padding(16.dp)
             ) {
+                IconButton(
+                    onClick = {
+                        navController.navigate("TelaInicial")
+                    }){
                 Icon(
                     painterResource(id = R.drawable.baseline_arrow_back_24),
                     contentDescription = "Ícone de voltar",
                     tint = Color(0xFF1E1B19)
-                )
+                )}
                 Spacer(modifier = Modifier.width(100.dp))
                 Text(
                     text = "Entrada",
