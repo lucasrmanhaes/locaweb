@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.locaweb.screens.CaixaDeEntradaScreen
 import br.com.locaweb.screens.LoginScreen
 import br.com.locaweb.screens.LoginScreenViewModel
 import br.com.locaweb.screens.TelaInicialScreen
@@ -33,7 +34,8 @@ class MainActivity : ComponentActivity() {
                     color = White
                 ) {
                     //LoginScreen(LoginScreenViewModel())
-                    LoginScreen(loginScreenViewModel = LoginScreenViewModel())
+                    //TelaInicialScreen()
+                    CaixaDeEntradaScreen()
             }
         }
     }

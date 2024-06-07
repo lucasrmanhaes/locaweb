@@ -62,8 +62,8 @@ fun TelaInicialScreen() {
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 Icon(
-                    imageVector = Icons.Default.Create,
-                    contentDescription = "Ícone de senha",
+                    painterResource(id = R.drawable.outline_edit_24),
+                    contentDescription = "Ícone de edição",
                     tint = Color(0xFF1E1B19)
                 )
         }
