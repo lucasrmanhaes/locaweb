@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -27,7 +28,7 @@ fun CustomButtonTelaInicial(
     backgroundColor: Color = Color(0xFFDFE5F0),
     textColor: Color = Color.Black,
     cornerRadius: Dp = 10.dp,
-    icon: ImageVector? = null,
+    icon: Painter? = null,
     iconTint: Color = textColor
 ) {
     Button(
@@ -47,7 +48,7 @@ fun CustomButtonTelaInicial(
         ){
         if (icon != null) {
             Icon(
-                imageVector = icon,
+                painter = icon,
                 contentDescription = null,
                 tint = iconTint
             )

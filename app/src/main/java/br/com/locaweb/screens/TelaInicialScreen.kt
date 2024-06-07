@@ -29,10 +29,12 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import br.com.locaweb.R
 import br.com.locaweb.components.CustomButtonTelaInicial
 import br.com.locaweb.ui.theme.Subtitle
 import br.com.locaweb.ui.theme.TelaFundo
@@ -76,63 +78,63 @@ fun TelaInicialScreen() {
                     .padding(16.dp)
                 ) {
                     CustomButtonTelaInicial(
-                        icon = Icons.Default.Email,
+                        icon = painterResource(id = R.drawable.ic_inbox),
                         text = "Entrada",
                         onClick = { /*TODO*/
                         }
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     CustomButtonTelaInicial(
-                        icon = Icons.Default.Star,
+                        icon = painterResource(id = R.drawable.outline_star_24),
                         text = "Favoritos",
                         onClick = { /*TODO*/
                         }
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     CustomButtonTelaInicial(
-                        icon = Icons.Default.Send,
+                        icon = painterResource(id = R.drawable.outline_send_24),
                         text = "Enviados",
                         onClick = { /*TODO*/
                         }
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     CustomButtonTelaInicial(
-                        icon = Icons.Default.Delete,
+                        icon = painterResource(id = R.drawable.outline_delete_24),
                         text = "Excluídos",
                         onClick = { /*TODO*/
                         }
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     CustomButtonTelaInicial(
-                        icon = Icons.Default.Notifications,
+                        icon = painterResource(id = R.drawable.outline_label_important_24),
                         text = "Importante",
                         onClick = { /*TODO*/
                         }
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     CustomButtonTelaInicial(
-                        icon = Icons.Default.Email,
+                        icon = painterResource(id = R.drawable.outline_draft_24),
                         text = "Rascunhos",
                         onClick = { /*TODO*/
                         }
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     CustomButtonTelaInicial(
-                        icon = Icons.Default.Email,
+                        icon = painterResource(id = R.drawable.outline_report_24),
                         text = "Entrada",
                         onClick = { /*TODO*/
                         }
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     CustomButtonTelaInicial(
-                        icon = Icons.Default.Email,
+                        icon = painterResource(id = R.drawable.outline_calendar_today_24),
                         text = "Entrada",
                         onClick = { /*TODO*/
                         }
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     CustomButtonTelaInicial(
-                        icon = Icons.Default.Email,
+                        icon = painterResource(id = R.drawable.outline_settings_24),
                         text = "Entrada",
                         onClick = { /*TODO*/
                         }

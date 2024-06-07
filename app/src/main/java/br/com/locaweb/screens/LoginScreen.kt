@@ -25,6 +25,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -39,6 +41,10 @@ import br.com.locaweb.ui.theme.VermelhoLocaWeb
 @Composable
 fun LoginScreen(loginScreenViewModel: LoginScreenViewModel) {
 
+    val Roboto = FontFamily(
+        Font(R.font.roboto_regular, FontWeight.Normal),
+        Font(R.font.roboto_bold, FontWeight.Bold)
+    )
     val email by loginScreenViewModel.email.observeAsState(initial = "")
     val senha by loginScreenViewModel.senha.observeAsState(initial = "")
 
@@ -53,15 +59,19 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel) {
                 contentDescription = "logo",
 
                 modifier = Modifier
-                    .size(120.dp)
+                    .width(300.dp)
+                    .height(90.dp)
                     .padding(top = 16.dp)
                     .align(Alignment.CenterHorizontally)
             )
+
             Text(
                 text = "O melhor lugar para os seus e-mails, \n" +
                         "notas, calendário e muito mais.",
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth(),
                 fontSize = 16.sp,
+                fontFamily = Roboto,
                 color = Subtitle,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center
@@ -82,11 +92,12 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel) {
                         text = "Olá!",
                         fontWeight = FontWeight.Bold,
                         color = VermelhoLocaWeb,
-                        fontSize = 24.sp
+                        fontSize = 24.sp,
+                        fontFamily = Roboto
                     )
                     Text(
                         text = "Acesse sua conta ou cadastre-se",
-                        fontWeight = FontWeight.Bold,
+                        fontFamily = Roboto,
                     )
                     CaixaDeEntrada(
                         label = "Email",

@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     color = White
                 ) {
                     //LoginScreen(LoginScreenViewModel())
-                    TelaInicialScreen()
+                    LoginScreen(loginScreenViewModel = LoginScreenViewModel())
             }
         }
     }
