@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.locaweb.screens.CaixaDeEmailsScreen
 import br.com.locaweb.screens.CaixaDeEntradaScreen
 import br.com.locaweb.screens.LoginScreen
 import br.com.locaweb.screens.LoginScreenViewModel
@@ -35,22 +36,18 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = "login") {
-                        composable(route = "login"){ LoginScreen(LoginScreenViewModel(),  navController)}
-                        composable(route = "TelaInicial"){ TelaInicialScreen(navController)}
-                        composable(route = "TelaListaEmails"){ CaixaDeEntradaScreen(navController)}
+                        composable(route = "login"){ LoginScreen(LoginScreenViewModel(),  navController) }
+                        composable(route = "TelaInicial"){ TelaInicialScreen(navController) }
+                        composable(route = "TelaContasDeEmail"){ CaixaDeEmailsScreen(navController) }
+                        composable(route = "TelaListaEmails"){ CaixaDeEntradaScreen(navController) }
+
                     }
                     //LoginScreen(LoginScreenViewModel())
                     //TelaInicialScreen()
                     //CaixaDeEntradaScreen()
+                    //CaixaDeEmailsScreen()
             }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    LocawebTheme {
-
-    }
 }}
+

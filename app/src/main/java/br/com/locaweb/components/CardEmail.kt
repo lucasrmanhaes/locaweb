@@ -1,6 +1,7 @@
 package br.com.locaweb.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -34,17 +35,19 @@ fun CustomCard(
     description: String,
     imageResource: Int,
     iconResource: Int,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-
     val Roboto = FontFamily(
         Font(R.font.roboto_regular, FontWeight.Normal),
         Font(R.font.roboto_bold, FontWeight.Bold)
     )
+
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .height(120.dp),
+            .height(120.dp)
+            .clickable(onClick = onClick),
         colors = CardDefaults.cardColors(Color(0xFFDFE5F0)),
     ) {
         Column(

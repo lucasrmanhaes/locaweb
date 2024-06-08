@@ -150,7 +150,7 @@ fun LoginScreen(loginScreenViewModel: LoginScreenViewModel, navController: NavCo
                         onClick = { navController.navigate("telaInicial") })
 
                     CustomButton(
-                        text = "Cadastre-se",
+                        text = "CADASTRE-SE",
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(top = 32.dp)

@@ -24,6 +24,7 @@ import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -95,7 +96,7 @@ fun TelaInicialScreen(navController: NavController) {
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.ic_inbox),
                             text = "Entrada",
-                            onClick = {  navController.navigate("TelaListaEmails") }
+                            onClick = {  navController.navigate("TelaContasDeEmail") }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
@@ -149,5 +150,37 @@ fun TelaInicialScreen(navController: NavController) {
                 }
             }
         }
+        Spacer(modifier = Modifier.weight(1f))
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.Start,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            IconButton(
+                onClick = {
+                    navController.navigate("Login")
+                }
+            ) {
+                Icon(
+                    painterResource(id = R.drawable.outline_close_24),
+                    contentDescription = "Ícone de fechar",
+                    tint = Color(0xFF1E1B19)
+                )
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "Sair",
+                color = Color(0xFF1E1B19),
+                fontSize = 18.sp,
+                fontFamily = Roboto
+            )
+        }
+            
+
+        }
     }
-}
+
