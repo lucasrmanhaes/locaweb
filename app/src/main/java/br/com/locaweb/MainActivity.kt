@@ -1,27 +1,23 @@
 package br.com.locaweb
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.locaweb.screens.CaixaDeEmailsScreen
 import br.com.locaweb.screens.CaixaDeEntradaScreen
+import br.com.locaweb.screens.EmailAbertoScreen
 import br.com.locaweb.screens.LoginScreen
 import br.com.locaweb.screens.LoginScreenViewModel
 import br.com.locaweb.screens.TelaInicialScreen
 import br.com.locaweb.ui.theme.LocawebTheme
-import br.com.locaweb.ui.theme.PurpleGrey40
 import br.com.locaweb.ui.theme.White
 
 class MainActivity : ComponentActivity() {
@@ -36,18 +32,29 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val navController = rememberNavController()
                     NavHost(navController = navController, startDestination = "login") {
-                        composable(route = "login"){ LoginScreen(LoginScreenViewModel(),  navController) }
-                        composable(route = "TelaInicial"){ TelaInicialScreen(navController) }
-                        composable(route = "TelaContasDeEmail"){ CaixaDeEmailsScreen(navController) }
-                        composable(route = "TelaListaEmails"){ CaixaDeEntradaScreen(navController) }
+                        composable(route = "login") {
+                            LoginScreen(
+                                LoginScreenViewModel(),
+                                navController
+                            )
+                        }
+                        composable(route = "TelaInicial") { TelaInicialScreen(navController) }
+                        composable(route = "TelaContasDeEmail") { CaixaDeEmailsScreen(navController) }
+                        composable(route = "TelaListaEmails") { CaixaDeEntradaScreen(navController) }
+                        composable(route = "EmailAgendamentoAberto") {
+                            EmailAbertoScreen(
+                                navController
+                            )
+                        }
 
                     }
                     //LoginScreen(LoginScreenViewModel())
                     //TelaInicialScreen()
                     //CaixaDeEntradaScreen()
                     //CaixaDeEmailsScreen()
+                    //EmailAbertoScreen()
+                }
             }
         }
-    }
-}}
 
+    }}

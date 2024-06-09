@@ -123,7 +123,7 @@ fun CaixaDeEntradaScreen(navController: NavController) {
                 description = email.description,
                 imageResource = email.imageResource,
                 iconResource = email.iconResource,
-                onClick = {}
+                onClick = {navController.navigate("EmailAgendamentoAberto")}
             )
             Spacer(modifier = Modifier.height(16.dp))
         }
