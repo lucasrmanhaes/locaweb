@@ -40,7 +40,10 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = "TelaInicial") { TelaInicialScreen(navController) }
                         composable(route = "TelaContasDeEmail") { CaixaDeEmailsScreen(navController) }
-                        composable(route = "TelaListaEmails") { CaixaDeEntradaScreen(navController) }
+                        composable(route = "TelaListaEmails/{emailType}") { backStackEntry ->
+                            val emailType = backStackEntry.arguments?.getString("emailType")?.toIntOrNull() ?: 1
+                            CaixaDeEntradaScreen(navController, emailType)
+                        }
                         composable(route = "EmailAgendamentoAberto") {
                             EmailAbertoScreen(
                                 navController

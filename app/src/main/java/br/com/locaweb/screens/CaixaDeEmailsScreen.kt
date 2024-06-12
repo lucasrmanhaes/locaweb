@@ -25,7 +25,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.locaweb.R
 import br.com.locaweb.components.CustomCard
-import br.com.locaweb.local_storage.Email
 
 @Composable
 fun CaixaDeEmailsScreen(navController: NavController) {
@@ -33,7 +32,6 @@ fun CaixaDeEmailsScreen(navController: NavController) {
         Font(R.font.roboto_regular, FontWeight.Normal),
         Font(R.font.roboto_bold, FontWeight.Bold)
     )
-
 
     Column(
         modifier = Modifier
@@ -87,12 +85,12 @@ fun CaixaDeEmailsScreen(navController: NavController) {
             Spacer(modifier = Modifier.height(20.dp))
 
             CustomCard(
-                title = "Caixa de entrada Gmail" ,
+                title = "Caixa de entrada Gmail",
                 date = "",
                 description = "4 emails não lidos",
                 imageResource = R.drawable.gmail,
                 iconResource = R.drawable.outline_star_24,
-                onClick = {navController.navigate("TelaListaEmails")}
+                onClick = { navController.navigate("TelaListaEmails/1") }
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -103,17 +101,18 @@ fun CaixaDeEmailsScreen(navController: NavController) {
                 description = "20 emails nao lidos",
                 imageResource = R.drawable.outlook,
                 iconResource = R.drawable.outline_star_24,
-                onClick = { /*TODO*/ })
+                onClick = { navController.navigate("TelaListaEmails/2") }
+            )
 
             Spacer(modifier = Modifier.height(20.dp))
 
             CustomCard(
-                title = "Caixa de entrada Trabalho" ,
+                title = "Caixa de entrada Trabalho",
                 date = "",
                 description = "0 emails não lidos",
                 imageResource = R.drawable.trabalho,
                 iconResource = R.drawable.outline_star_24,
-                onClick = {/*TODO*/}
+                onClick = { navController.navigate("TelaListaEmails/3") }
             )
 
             Spacer(modifier = Modifier.weight(1f))
@@ -136,6 +135,6 @@ fun CaixaDeEmailsScreen(navController: NavController) {
                     )
                 }
             }
-
-
-        }}}
+        }
+    }
+}

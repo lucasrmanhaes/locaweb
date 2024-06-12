@@ -103,7 +103,7 @@ fun EmailAbertoScreen(navController: NavController) {
             EmailAgendamentoAberto(
                 subject = "Reunião de alinhamento",
                 sender = "usuario@gmail.com",
-                date = "09/06/2024",
+                date = "09/08/2024",
                 time = "13:00",
                 location = "São Paulo - Brasil",
                 body = "Reunião para alinhamento de tarefas da equipe," +

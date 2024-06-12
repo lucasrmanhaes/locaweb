@@ -1,4 +1,3 @@
-
 package br.com.locaweb.screens
 
 import androidx.compose.foundation.layout.Arrangement
@@ -35,7 +34,7 @@ import br.com.locaweb.local_storage.emailList
 import kotlinx.coroutines.delay
 
 @Composable
-fun CaixaDeEntradaScreen(navController: NavController) {
+fun CaixaDeEntradaScreen(navController: NavController, emailType: Int) {
     val Roboto = FontFamily(
         Font(R.font.roboto_regular, FontWeight.Normal),
         Font(R.font.roboto_bold, FontWeight.Bold)
@@ -45,9 +44,10 @@ fun CaixaDeEntradaScreen(navController: NavController) {
     val currentEmailIndex = remember { mutableStateOf(0) }
 
     LaunchedEffect(Unit) {
-        while (currentEmailIndex.value < emailList.size) {
-            delay(3000) // Aguarda 3 segundos antes de exibir o próximo e-mail
-            emailsToShow.add(emailList[currentEmailIndex.value])
+        val filteredEmails = emailList.filter { it.emailType == emailType }
+        while (currentEmailIndex.value < filteredEmails.size) {
+            delay(3000)
+            emailsToShow.add(filteredEmails[currentEmailIndex.value])
             currentEmailIndex.value++
         }
     }
@@ -97,12 +97,14 @@ fun CaixaDeEntradaScreen(navController: NavController) {
                 IconButton(
                     onClick = {
                         navController.navigate("TelaContasDeEmail")
-                    }){
-                Icon(
-                    painterResource(id = R.drawable.baseline_arrow_back_24),
-                    contentDescription = "Ícone de voltar",
-                    tint = Color(0xFF1E1B19)
-                )}
+                    }
+                ) {
+                    Icon(
+                        painterResource(id = R.drawable.baseline_arrow_back_24),
+                        contentDescription = "Ícone de voltar",
+                        tint = Color(0xFF1E1B19)
+                    )
+                }
                 Spacer(modifier = Modifier.width(100.dp))
                 Text(
                     text = "Entrada",
@@ -123,7 +125,7 @@ fun CaixaDeEntradaScreen(navController: NavController) {
                 description = email.description,
                 imageResource = email.imageResource,
                 iconResource = email.iconResource,
-                onClick = {navController.navigate("EmailAgendamentoAberto")}
+                onClick = { navController.navigate("EmailAgendamentoAberto") }
             )
             Spacer(modifier = Modifier.height(16.dp))
         }

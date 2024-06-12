@@ -6,5 +6,6 @@ data class Email(
     val date: String,
     val description: String,
     val imageResource: Int,
-    val iconResource: Int
+    val iconResource: Int,
+    val emailType: Int
 )
