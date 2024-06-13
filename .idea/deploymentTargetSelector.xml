@@ -2,9 +2,9 @@
 <project version="4">
   <component name="deploymentTargetSelector">
     <selectionStates>
-      <SelectionState runConfigName="App">
+      <SelectionState runConfigName="Unnamed">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-06-09T21:21:41.018912Z">
+        <DropdownSelection timestamp="2024-06-13T13:37:15.872488400Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\rityn\.android\avd\Glaxy.avd" />
@@ -12,9 +12,6 @@
           </Target>
         </DropdownSelection>
         <DialogSelection />
-      </SelectionState>
-      <SelectionState runConfigName="Unnamed">
-        <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
   </component>

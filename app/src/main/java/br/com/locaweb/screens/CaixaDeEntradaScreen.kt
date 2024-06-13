@@ -44,7 +44,11 @@ fun CaixaDeEntradaScreen(navController: NavController, emailType: Int) {
     val currentEmailIndex = remember { mutableStateOf(0) }
 
     LaunchedEffect(Unit) {
-        val filteredEmails = emailList.filter { it.emailType == emailType }
+        val filteredEmails = if (emailType == 0) {
+            emailList // Mostrar todos os e-mails para a Caixa de Entrada Consolidada
+        } else {
+            emailList.filter { it.emailType == emailType }
+        }
         while (currentEmailIndex.value < filteredEmails.size) {
             delay(3000)
             emailsToShow.add(filteredEmails[currentEmailIndex.value])

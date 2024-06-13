@@ -85,6 +85,17 @@ fun CaixaDeEmailsScreen(navController: NavController) {
             Spacer(modifier = Modifier.height(20.dp))
 
             CustomCard(
+                title = "Caixa de entrada Consolidada",
+                date = "",
+                description = "4 emails não lidos",
+                imageResource = R.drawable.consolidado,
+                iconResource = R.drawable.outline_star_24,
+                onClick = { navController.navigate("TelaListaEmails/0") }
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            CustomCard(
                 title = "Caixa de entrada Gmail",
                 date = "",
                 description = "4 emails não lidos",

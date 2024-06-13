@@ -146,7 +146,7 @@ fun EmailAbertoScreen(navController: NavController) {
                         modifier = Modifier.padding(bottom = 4.dp)
                     )
                     Text(
-                        text = "Data: 09/06/2024",
+                        text = "Data: 09/08/2024",
                         fontSize = 14.sp,
                         modifier = Modifier.padding(bottom = 4.dp)
                     )
@@ -201,7 +201,7 @@ fun EmailAbertoScreen(navController: NavController) {
                 contentDescription = "Ícone de fechar",
                 tint = Color(0xFF1E1B19),
                 modifier = Modifier
-                    .size(32.dp)
+                    .size(42.dp)
                     .clickable {
 
                             navController.navigate("TelaContasDeEmail")
@@ -214,7 +214,7 @@ fun EmailAbertoScreen(navController: NavController) {
                 contentDescription = "Ícone de lixeira",
                 tint = Color(0xFF1E1B19),
                 modifier = Modifier
-                    .size(32.dp)
+                    .size(42.dp)
                     .clickable { /*TODO*/ }
             )
         }
