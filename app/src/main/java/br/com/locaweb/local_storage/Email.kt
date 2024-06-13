@@ -1,6 +1,5 @@
 package br.com.locaweb.local_storage
 
-
 data class Email(
     val title: String,
     val date: String,

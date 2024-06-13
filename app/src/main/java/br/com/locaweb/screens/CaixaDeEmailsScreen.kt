@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.locaweb.R
 import br.com.locaweb.components.CustomCard
+import br.com.locaweb.components.CustomCardContaEmail
 
 @Composable
 fun CaixaDeEmailsScreen(navController: NavController) {
@@ -49,7 +50,7 @@ fun CaixaDeEmailsScreen(navController: NavController) {
             ) {
                 Icon(
                     painterResource(id = R.drawable.outline_library_add_24),
-                    contentDescription = "Ícone de pesquisar",
+                    contentDescription = "Ícone de adicionar",
                     tint = Color(0xFF1E1B19)
                 )
                 Spacer(modifier = Modifier.width(20.dp))
@@ -84,46 +85,42 @@ fun CaixaDeEmailsScreen(navController: NavController) {
             }
             Spacer(modifier = Modifier.height(20.dp))
 
-            CustomCard(
+            CustomCardContaEmail(
                 title = "Caixa de entrada Consolidada",
                 date = "",
                 description = "4 emails não lidos",
                 imageResource = R.drawable.consolidado,
-                iconResource = R.drawable.outline_star_24,
                 onClick = { navController.navigate("TelaListaEmails/0") }
             )
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            CustomCard(
+            CustomCardContaEmail(
                 title = "Caixa de entrada Gmail",
                 date = "",
-                description = "4 emails não lidos",
+                description = "2 emails não lidos",
                 imageResource = R.drawable.gmail,
-                iconResource = R.drawable.outline_star_24,
                 onClick = { navController.navigate("TelaListaEmails/1") }
             )
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            CustomCard(
+            CustomCardContaEmail(
                 title = "Caixa de entrada Outlook",
                 date = "",
-                description = "20 emails nao lidos",
+                description = "1 email nao lido",
                 imageResource = R.drawable.outlook,
-                iconResource = R.drawable.outline_star_24,
-                onClick = { navController.navigate("TelaListaEmails/2") }
+                onClick = { navController.navigate("TelaListaEmails/2") },
             )
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            CustomCard(
+            CustomCardContaEmail(
                 title = "Caixa de entrada Trabalho",
                 date = "",
-                description = "0 emails não lidos",
+                description = "1 emails não lidos",
                 imageResource = R.drawable.trabalho,
-                iconResource = R.drawable.outline_star_24,
-                onClick = { navController.navigate("TelaListaEmails/3") }
+                onClick = { navController.navigate("TelaListaEmails/3") },
             )
 
             Spacer(modifier = Modifier.weight(1f))

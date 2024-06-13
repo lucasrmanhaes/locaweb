@@ -17,6 +17,7 @@ import br.com.locaweb.screens.EmailAbertoScreen
 import br.com.locaweb.screens.LoginScreen
 import br.com.locaweb.screens.LoginScreenViewModel
 import br.com.locaweb.screens.TelaInicialScreen
+import br.com.locaweb.screens.TelaScreen
 import br.com.locaweb.ui.theme.LocawebTheme
 import br.com.locaweb.ui.theme.White
 
@@ -39,6 +40,7 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(route = "TelaInicial") { TelaInicialScreen(navController) }
+                        composable(route = "Tela") { TelaScreen(navController) }
                         composable(route = "TelaContasDeEmail") { CaixaDeEmailsScreen(navController) }
                         composable(route = "TelaListaEmails/{emailType}") { backStackEntry ->
                             val emailType = backStackEntry.arguments?.getString("emailType")?.toIntOrNull() ?: 1

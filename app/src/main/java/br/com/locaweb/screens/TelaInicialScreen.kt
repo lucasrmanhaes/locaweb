@@ -102,49 +102,49 @@ fun TelaInicialScreen(navController: NavController) {
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_star_24),
                             text = "Favoritos",
-                            onClick = { /*TODO*/ }
+                            onClick = { navController.navigate("Tela") }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_send_24),
                             text = "Enviados",
-                            onClick = { /*TODO*/ }
+                            onClick = { navController.navigate("Tela") }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_delete_24),
                             text = "Excluídos",
-                            onClick = { /*TODO*/ }
+                            onClick = { navController.navigate("Tela")}
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_label_important_24),
                             text = "Importante",
-                            onClick = { /*TODO*/ }
+                            onClick = { navController.navigate("Tela") }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_draft_24),
                             text = "Rascunhos",
-                            onClick = { /*TODO*/ }
+                            onClick = { navController.navigate("Tela") }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_report_24),
                             text = "Spam",
-                            onClick = { /*TODO*/ }
+                            onClick = { navController.navigate("Tela") }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_calendar_today_24),
                             text = "Agenda",
-                            onClick = { /*TODO*/ }
+                            onClick = { navController.navigate("Tela") }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_settings_24),
                             text = "Configurações",
-                            onClick = { /*TODO*/ }
+                            onClick = { navController.navigate("Tela")}
                         )
                     }
                 }
