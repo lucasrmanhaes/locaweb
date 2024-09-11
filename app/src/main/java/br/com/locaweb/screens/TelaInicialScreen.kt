@@ -36,16 +36,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.locaweb.R
 import br.com.locaweb.components.CustomButtonTelaInicial
-import br.com.locaweb.ui.theme.Subtitle
-import br.com.locaweb.ui.theme.TelaFundo
-import br.com.locaweb.ui.theme.White
 
 @Composable
 fun TelaInicialScreen(navController: NavController) {
@@ -144,7 +140,7 @@ fun TelaInicialScreen(navController: NavController) {
                         CustomButtonTelaInicial(
                             icon = painterResource(id = R.drawable.outline_settings_24),
                             text = "Configurações",
-                            onClick = { navController.navigate("Tela")}
+                            onClick = { navController.navigate("TelaConfiguracoes")}
                         )
                     }
                 }
@@ -183,4 +179,3 @@ fun TelaInicialScreen(navController: NavController) {
 
         }
     }
-
